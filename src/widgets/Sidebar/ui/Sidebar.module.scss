@@ -1,0 +1,11 @@
+.Sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--inverted-bg-color);
+  height: calc(100vh - var(--navbar-height));
+  padding: 20px;
+  transition: width 0.1s linear;
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
