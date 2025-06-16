@@ -7,4 +7,8 @@
   background-color: var(--inverted-bg-color);
   width: 100%;
   height: var(--navbar-height);
+
+  &__switcher {
+    margin-right: auto;
+  }
 }
