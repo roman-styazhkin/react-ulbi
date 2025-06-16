@@ -11,8 +11,8 @@ const App: FC = () => {
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <button onClick={toggleTheme} type="button">Toggle theme</button>
             <Navbar />
+            <button onClick={toggleTheme} type="button">Toggle theme</button>
             <AppRouter />
         </div>
     );
