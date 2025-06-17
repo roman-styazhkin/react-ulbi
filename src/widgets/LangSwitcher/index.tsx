@@ -1,1 +1,1 @@
-export { LangSwitcher } from "./ui/LangSwitcher";
+export { LangSwitcherSuspence as LangSwitcher } from "./ui/LangSwitcherSuspence";
