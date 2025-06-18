@@ -20,7 +20,7 @@ export function buildPlugins({ paths, isDev } : BuildOptions): webpack.WebpackPl
   ];
 
   if (isDev) {
-    plugins.push(new ReactRefreshWebpackPlugin());
+    // plugins.push(new ReactRefreshWebpackPlugin());
     plugins.push(new webpack.HotModuleReplacementPlugin());
   }
 

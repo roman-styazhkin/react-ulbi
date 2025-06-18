@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRouter } from 'app/provider/AppRouter';
 import { Navbar } from 'widgets/Navbar';
@@ -8,6 +8,10 @@ import './styles/index.scss';
 
 const App: FC = () => {
   const { theme } = useTheme();
+
+  useEffect(() => {
+    throw new Error('hello');
+  });
 
   return (
     <div className={classNames('app', {}, [theme])}>
