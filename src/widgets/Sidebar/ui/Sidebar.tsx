@@ -1,6 +1,7 @@
 import { FC, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
+import { BugButton } from 'app/provider/ErrorBoundary';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -17,6 +18,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
   return (
     <div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
       <Button type="button" onClick={onToggleCollapsed}>Toggle</Button>
+      <BugButton />
     </div>
   );
 };
