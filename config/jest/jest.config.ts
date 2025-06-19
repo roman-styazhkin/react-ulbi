@@ -29,6 +29,7 @@ export default {
   ],
   moduleDirectories: [
     'node_modules',
+    'src',
   ],
   testMatch: [
     // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
