@@ -1,14 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
-import { fn } from 'storybook/test';
-import { Button } from './Button';
+import { Theme } from 'app/provider/ThemeProvider';
+import { StyleDecorator } from 'shared/config/storybook/StyleDecorator/StyleDecorator';
+import { Button, ThemeButton } from './Button';
 
 const meta = {
   title: 'shared/Button',
   component: Button,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-  args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -16,13 +13,22 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    children: 'Text',
   },
 };
 
-export const Secondary: Story = {
+export const Clear: Story = {
   args: {
-    label: 'Button',
+    children: 'Text',
+    theme: ThemeButton.CLEAR,
   },
 };
+
+export const Outline: Story = {
+  args: {
+    children: 'Text',
+    theme: ThemeButton.OUTLINE,
+  },
+};
+
+Outline.decorators = [StyleDecorator(Theme.DARK)];
