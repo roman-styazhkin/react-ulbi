@@ -1,12 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
-import { Theme } from 'app/provider/ThemeProvider';
 import { StyleDecorator } from 'shared/config/storybook/StyleDecorator/StyleDecorator';
-import { Sidebar } from './Sidebar';
+import { Theme } from 'app/provider/ThemeProvider';
+import { Spinner } from './Spinner';
 
 const meta = {
-  title: 'widgets/Sidebar',
-  component: Sidebar,
-} satisfies Meta<typeof Sidebar>;
+  title: 'shared/Spinner',
+  component: Spinner,
+  args: {
+    to: '/',
+  },
+} satisfies Meta<typeof Spinner>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

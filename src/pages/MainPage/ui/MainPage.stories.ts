@@ -1,17 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
-import { Theme } from 'app/provider/ThemeProvider';
 import { StyleDecorator } from 'shared/config/storybook/StyleDecorator/StyleDecorator';
-import { Sidebar } from './Sidebar';
+import { Theme } from 'app/provider/ThemeProvider';
+import MainPage from './MainPage';
 
 const meta = {
-  title: 'widgets/Sidebar',
-  component: Sidebar,
-} satisfies Meta<typeof Sidebar>;
+  title: 'pages/MainPage',
+  component: MainPage,
+} satisfies Meta<typeof MainPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {};
 export const Dark: Story = {};
-
 Dark.decorators = [StyleDecorator(Theme.DARK)];
