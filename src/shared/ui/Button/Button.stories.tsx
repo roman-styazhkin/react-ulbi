@@ -1,32 +1,30 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Button } from './Button';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { StyleDecorator } from 'shared/config/storybook/StyleDecorator';
+import { Theme } from 'app/provider/ThemeProvider';
+import { Button, ThemeButton } from './Button';
 
 export default {
-    title: 'shared/Button',
-    component: Button,
+  title: 'shared/Button',
+  component: Button,
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args)  => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    primary: true,
-    label: 'Primary Button',
+  children: 'Value',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-    label: 'Secondary Button',
+export const Clear = Template.bind({});
+Clear.args = {
+  children: 'Value',
+  theme: ThemeButton.CLEAR,
 };
 
-export const Large = Template.bind({});
-Large.args = {
-    size: 'large',
-    label: 'Large Button',
+export const Outline = Template.bind({});
+Outline.args = {
+  children: 'Value',
+  theme: ThemeButton.OUTLINE,
 };
 
-export const Small = Template.bind({});
-Small.args = {
-    size: 'small',
-    label: 'Small Button',
-};
+Outline.decorators = [StyleDecorator(Theme.DARK)];
