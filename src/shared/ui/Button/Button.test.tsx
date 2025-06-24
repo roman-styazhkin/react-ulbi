@@ -11,6 +11,5 @@ describe('Button', () => {
   test('Button with clear props', () => {
     render(<Button theme={ThemeButton.CLEAR}>Test</Button>);
     expect(screen.getByText('Test')).toHaveClass('clear');
-    screen.debug();
   });
 });

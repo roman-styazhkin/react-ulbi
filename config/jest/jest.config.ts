@@ -35,7 +35,7 @@ export default {
   ],
   testMatch: [
     // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
-    // '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
   rootDir: '../../',
   setupFilesAfterEnv: ['<rootDir>/config/jest/jest-setup.ts'],
