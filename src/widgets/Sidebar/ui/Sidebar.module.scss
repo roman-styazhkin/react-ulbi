@@ -1,11 +1,21 @@
 .Sidebar {
+  position: relative;
   width: var(--sidebar-width);
   background-color: var(--inverted-bg-color);
   height: calc(100vh - var(--navbar-height));
   padding: 20px;
   transition: width 0.1s linear;
+
+  &__toggler {
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+    transform: translateX(100%);
+    font-size: 18px;
+  }
 }
 
 .collapsed {
   width: var(--sidebar-width-collapsed);
 }
+

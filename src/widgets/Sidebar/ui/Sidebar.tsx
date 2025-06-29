@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui/Button/Button';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { BugButton } from 'app/provider/ErrorBoundary';
 import cls from './Sidebar.module.scss';
 
@@ -21,11 +21,15 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
       className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
     >
       <Button
+        className={cls.Sidebar__toggler}
         data-testid="sidebar-toggler"
         type="button"
         onClick={onToggleCollapsed}
+        theme={ButtonTheme.BACKGROUND_INVERTED}
+        square={ButtonTheme.SQUARE}
+        size={ButtonSize.Xl}
       >
-        Toggle
+        {collapsed ? '>' : '<'}
       </Button>
       <BugButton />
     </div>
