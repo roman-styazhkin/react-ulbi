@@ -1,8 +1,12 @@
 import { FC, Suspense } from 'react';
 import { LangSwitcher } from './LangSwitcher';
 
-export const LangSwitcherSuspence: FC = () => (
+interface LangSwitcherProps {
+    short?: boolean;
+    className?: string;
+}
+export const LangSwitcherSuspence: FC<LangSwitcherProps> = (props) => (
   <Suspense fallback="">
-    <LangSwitcher />
+    <LangSwitcher {...props} />
   </Suspense>
 );

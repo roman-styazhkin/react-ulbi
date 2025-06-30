@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, Suspense } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRouter } from 'app/provider/AppRouter';
 import { Navbar } from 'widgets/Navbar';
@@ -13,7 +13,9 @@ const App: FC = () => {
     <div className={classNames('app', {}, [theme])}>
       <Navbar />
       <div className="app__content">
-        <Sidebar />
+        <Suspense fallback="">
+          <Sidebar />
+        </Suspense>
         <AppRouter />
       </div>
     </div>
