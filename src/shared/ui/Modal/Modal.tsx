@@ -2,6 +2,7 @@ import React, {
   FC, ReactNode, useCallback, useEffect,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Portal } from 'shared/ui/Portal/Portal';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
@@ -22,12 +23,6 @@ export const Modal: FC<ModalProps> = (props) => {
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
   };
-
-  // const onCloseModal = () => {
-  //   if (onClose) {
-  //     onClose();
-  //   }
-  // };
 
   const onCloseModal = useCallback(() => {
     if (onClose) {
@@ -52,18 +47,20 @@ export const Modal: FC<ModalProps> = (props) => {
   }, [isOpen, onKeyDown]);
 
   return (
-    <div className={classNames(cls.Modal, mods, [className])}>
-      <div
-        className={cls.Modal__overlay}
-        onClick={onCloseModal}
-      >
+    <Portal>
+      <div className={classNames(cls.Modal, mods, [className])}>
         <div
-          onClick={(e: React.MouseEvent) => e.stopPropagation()}
-          className={cls.Modal__content}
+          className={cls.Modal__overlay}
+          onClick={onCloseModal}
         >
-          {children}
+          <div
+            onClick={(e: React.MouseEvent) => e.stopPropagation()}
+            className={cls.Modal__content}
+          >
+            {children}
+          </div>
         </div>
       </div>
-    </div>
+    </Portal>
   );
 };
