@@ -37,6 +37,14 @@ BackgroundThemePrimary.args = {
 
 BackgroundThemePrimary.decorators = [StyleDecorator(Theme.DARK)];
 
+export const ClearInverted = Template.bind({});
+ClearInverted.args = {
+  children: 'Value',
+  theme: ButtonTheme.CLEAR_INVERTED,
+};
+
+ClearInverted.decorators = [StyleDecorator(Theme.DARK)];
+
 export const BackgroundThemeInverted = Template.bind({});
 BackgroundThemeInverted.args = {
   children: 'Value',

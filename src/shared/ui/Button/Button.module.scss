@@ -34,10 +34,17 @@
 }
 
 .backgroundPrimary,
-.backgroundInverted {
+.backgroundInverted,
+.clearInverted {
   border: none;
   outline: none;
   padding: 0;
+}
+
+.clearInverted {
+  border: 1px solid var(--inverted-primary-color);
+  color: var(--inverted-primary-color);
+  padding: 5px 20px;
 }
 
 .backgroundPrimary {
