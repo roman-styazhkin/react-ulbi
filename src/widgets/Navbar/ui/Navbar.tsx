@@ -5,6 +5,7 @@ import { BugButton } from 'app/provider/ErrorBoundary';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { Modal } from 'shared/ui/Modal/Modal';
+import { LoginModal } from 'features/AuthByUserName/ui/LiginModal/LoginModal';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -31,12 +32,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
         >
           {t('Войти')}
         </Button>
-        <Modal
-          isOpen={isModalOpened}
-          onClose={onToggleModal}
-        >
-          <h1>Hello world</h1>
-        </Modal>
+        <LoginModal isOpen={isModalOpened} onClose={onToggleModal} />
       </div>
     </div>
   );
