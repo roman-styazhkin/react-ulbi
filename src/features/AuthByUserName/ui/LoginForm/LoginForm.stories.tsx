@@ -12,14 +12,14 @@ const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args
 
 export const LoginFormLight = Template.bind({});
 LoginFormLight.args = {
-  value: 'testValue',
+  value: 'testValue1',
 };
 
 LoginFormLight.decorators = [StyleDecorator(Theme.LIGHT)];
 
 export const LoginFormDark = Template.bind({});
 LoginFormDark.args = {
-  value: 'testValue',
+  value: 'testValue1',
 };
 
 LoginFormDark.decorators = [StyleDecorator(Theme.DARK)];
