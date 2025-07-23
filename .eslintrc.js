@@ -37,6 +37,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'warn',
     'no-param-reassign': 'off',
+    'jsx-a11y/label-has-associated-control': 'off',
   },
 
   globals: {
