@@ -1,8 +1,12 @@
-import { FC, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginActions } from '../../model/slice/loginSlice';
+import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import cls from './LoginForm.module.scss';
 
 interface LoginFormProps {
@@ -12,24 +16,46 @@ interface LoginFormProps {
 export const LoginForm: FC<LoginFormProps> = (props) => {
   const { className } = props;
   const { t } = useTranslation();
-  const [userName, setUserName] = useState('');
+  const dispatch = useDispatch();
+  const {
+    userName, password, error, isLoading,
+  } = useSelector(getLoginState);
+
+  const onChangeUserName = useCallback((value: string) => {
+    dispatch(loginActions.setUserName(value));
+  }, [dispatch]);
+
+  const onChangePassword = useCallback((value: string) => {
+    dispatch(loginActions.setPassword(value));
+  }, [dispatch]);
+
+  const onLoginClick = useCallback(() => {
+    dispatch(loginByUsername({ username: userName, password }));
+  }, [dispatch, userName, password]);
 
   return (
     <div className={classNames(cls.LoginForm, {}, [className])}>
       <div className={cls.LoginForm__controls}>
+        { error && <p>{error}</p> }
         <Input
           value={userName}
-          onChange={setUserName}
+          onChange={onChangeUserName}
           autoFocus
           className={cls.LoginForm__input}
           placeholder={t('Введите имя пользователя')}
+          name="user-name"
         />
         <Input
+          value={password}
+          onChange={onChangePassword}
           className={cls.LoginForm__input}
           placeholder={t('Введите пароль')}
+          name="user-password"
         />
       </div>
       <Button
+        disabled={isLoading}
+        onClick={onLoginClick}
         theme={ButtonTheme.BACKGROUND_INVERTED}
         className={cls.LoginForm__submit}
         type="submit"

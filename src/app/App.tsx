@@ -8,7 +8,6 @@ import './styles/index.scss';
 
 const App: FC = () => {
   const { theme } = useTheme();
-  const [state, setState] = useState();
 
   return (
     <Suspense fallback="">

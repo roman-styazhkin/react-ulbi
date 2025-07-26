@@ -4,9 +4,10 @@ import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { BugButton } from 'app/provider/ErrorBoundary';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
-import { Modal } from 'shared/ui/Modal/Modal';
-import { LoginModal } from 'features/AuthByUserName/ui/LiginModal/LoginModal';
+import { LoginModal } from 'features/AuthByUserName';
 import cls from './Navbar.module.scss';
+
+LoginModal;
 
 interface NavbarProps {
     className?: string;
