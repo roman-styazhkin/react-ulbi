@@ -4,6 +4,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
+import { Text, TextTheme } from 'shared/ui/Text/ui/Text';
 import { loginActions } from '../../model/slice/loginSlice';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
@@ -36,7 +37,8 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
   return (
     <div className={classNames(cls.LoginForm, {}, [className])}>
       <div className={cls.LoginForm__controls}>
-        { error && <p>{error}</p> }
+        <Text className={cls.LoginForm__title} title={t('Форма авторизации')} />
+        { error && <Text title={error} theme={TextTheme.ERROR} /> }
         <Input
           value={userName}
           onChange={onChangeUserName}

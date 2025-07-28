@@ -2,6 +2,11 @@
   width: 280px;
   background-color: var(--inverted-bg-color);
 
+  &__title p {
+    color: var(--inverted-primary-color);
+    margin-bottom: 20px;
+  }
+
   &__submit {
     display: block;
     border: 1px solid;

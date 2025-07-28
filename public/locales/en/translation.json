@@ -8,5 +8,7 @@
   "Главная страница": "Main page",
   "Войти": "Enter",
   "Введите имя пользователя": "Enter user name",
-  "Введите пароль": "Enter password"
+  "Введите пароль": "Enter password",
+  "Форма авторизации": "Auth form",
+  "Вы ввели неправильный логин или пароль": "You entered an incorrect login or password"
 }
