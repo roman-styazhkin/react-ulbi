@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Text, TextTheme } from 'shared/ui/Text/ui/Text';
 import { loginActions } from '../../model/slice/loginSlice';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
-import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import cls from './LoginForm.module.scss';
 
 interface LoginFormProps {
@@ -31,7 +30,7 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
   }, [dispatch]);
 
   const onLoginClick = useCallback(() => {
-    dispatch(loginByUsername({ username: userName, password }));
+    // dispatch(loginByUsername({ username: userName, password }));
   }, [dispatch, userName, password]);
 
   return (

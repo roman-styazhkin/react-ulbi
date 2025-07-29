@@ -5,9 +5,9 @@ import { BugButton } from 'app/provider/ErrorBoundary';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { LoginModal } from 'features/AuthByUserName';
+import { useSelector } from 'react-redux';
+import { NavbarLogout } from 'widgets/Navbar/ui/NavbarLogout';
 import cls from './Navbar.module.scss';
-
-LoginModal;
 
 interface NavbarProps {
     className?: string;
@@ -20,6 +20,10 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
   const onToggleModal = useCallback(() => {
     setIsModalOpened((prev) => !prev);
   }, []);
+
+  if (false) {
+    return <NavbarLogout />;
+  }
 
   return (
     <div className={classNames(cls.Navbar, {}, [className])}>

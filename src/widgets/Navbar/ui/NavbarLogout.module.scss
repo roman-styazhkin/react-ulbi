@@ -1,0 +1,21 @@
+.NavbarLogout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  gap: 10px;
+  background-color: var(--inverted-bg-color);
+  width: 100%;
+  height: var(--navbar-height);
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  &__button {
+    margin-left: auto;
+  }
+}
