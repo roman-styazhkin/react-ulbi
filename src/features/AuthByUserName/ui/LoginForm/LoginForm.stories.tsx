@@ -12,7 +12,11 @@ export default {
 const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
 
 export const LoginFormLight = Template.bind({});
-LoginFormLight.decorators = [StoreDecorator];
+LoginFormLight.decorators = [StoreDecorator({
+  loginForm: { userName: 'Roman', password: '123' },
+})];
 
 export const LoginFormDark = Template.bind({});
-LoginFormDark.decorators = [StyleDecorator(Theme.DARK), StoreDecorator];
+LoginFormDark.decorators = [StoreDecorator({
+  loginForm: { userName: 'kdjfkf', password: '12345' },
+}), StyleDecorator(Theme.DARK)];

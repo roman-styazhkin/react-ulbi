@@ -16,6 +16,6 @@ const preview = {
 
 addDecorator(StyleDecorator(Theme.LIGHT));
 addDecorator(RouterDecorator);
-addDecorator(StoreDecorator);
+addDecorator(StoreDecorator());
 
 export default preview;
