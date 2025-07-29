@@ -38,7 +38,7 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
     <div className={classNames(cls.LoginForm, {}, [className])}>
       <div className={cls.LoginForm__controls}>
         <Text className={cls.LoginForm__title} title={t('Форма авторизации')} />
-        { error && <Text title={error} theme={TextTheme.ERROR} /> }
+        { error && <Text title={t('Ошибка при вводе данных')} theme={TextTheme.ERROR} /> }
         <Input
           value={userName}
           onChange={onChangeUserName}

@@ -20,3 +20,8 @@ export const LoginFormDark = Template.bind({});
 LoginFormDark.decorators = [StoreDecorator({
   loginForm: { userName: 'kdjfkf', password: '12345' },
 }), StyleDecorator(Theme.DARK)];
+
+export const LoginFormError = Template.bind({});
+LoginFormError.decorators = [StoreDecorator({
+  loginForm: { userName: 'kdjfkf', password: '12345', error: 'Some error' },
+}), StyleDecorator(Theme.DARK)];
