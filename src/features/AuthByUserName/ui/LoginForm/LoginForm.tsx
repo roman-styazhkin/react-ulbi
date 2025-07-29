@@ -31,8 +31,8 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
   }, [dispatch]);
 
   const onLoginClick = useCallback(() => {
-    dispatch(loginByUsername({ username: userName, password }));
-  }, [dispatch, userName, password]);
+    dispatch(loginByUsername());
+  }, [dispatch]);
 
   return (
     <div className={classNames(cls.LoginForm, {}, [className])}>
