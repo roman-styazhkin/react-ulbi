@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { Text, TextTheme } from 'shared/ui/Text/ui/Text';
+import { userReducer } from 'entity/User';
 import { loginActions } from '../../model/slice/loginSlice';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
@@ -31,8 +32,8 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
   }, [dispatch]);
 
   const onLoginClick = useCallback(() => {
-    dispatch(loginByUsername());
-  }, [dispatch]);
+    dispatch(loginByUsername({ username: userName, password }));
+  }, [dispatch, userName, password]);
 
   return (
     <div className={classNames(cls.LoginForm, {}, [className])}>

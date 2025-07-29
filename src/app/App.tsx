@@ -4,6 +4,7 @@ import { AppRouter } from 'app/provider/AppRouter';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { useDispatch } from 'react-redux';
+import { userActions } from 'entity/User';
 import { useTheme } from './provider/ThemeProvider';
 import './styles/index.scss';
 
@@ -12,7 +13,7 @@ const App: FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // dispatch(userAction.initAuthData());
+    dispatch(userActions.initUserAuthData());
   }, [dispatch]);
 
   return (

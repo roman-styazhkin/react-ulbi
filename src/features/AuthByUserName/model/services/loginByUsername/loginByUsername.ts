@@ -2,18 +2,18 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import i18n from 'shared/config/i18n/i18n';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
-import { userActions } from 'entities/User';
+import { User, userActions } from 'entity/User';
 
 interface LoginByUsernameProps {
     username: string;
     password: string;
 }
 
-export const loginByUsername = createAsyncThunk(
+export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps>(
   'login/loginByUsername',
   async (authData, thunkAPI) => {
     try {
-      const response = await axios.post('http://localhost:8000/login', authData);
+      const response = await axios.post<User>('http://localhost:8000/login', authData);
 
       if (!response.data) {
         throw new Error();
