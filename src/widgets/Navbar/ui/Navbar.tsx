@@ -7,6 +7,8 @@ import { useTranslation } from 'react-i18next';
 import { LoginModal } from 'features/AuthByUserName';
 import { useSelector } from 'react-redux';
 import { NavbarLogout } from 'widgets/Navbar/ui/NavbarLogout';
+import { getLoginState } from 'features/AuthByUserName/model/selectors/getLoginState/getLoginState';
+import { getAuthUserData } from 'entity/User/model/selectors/getAuthUserData/getAuthUserData';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -16,12 +18,13 @@ interface NavbarProps {
 export const Navbar: FC<NavbarProps> = ({ className }) => {
   const { t } = useTranslation();
   const [isModalOpened, setIsModalOpened] = useState(false);
+  const { authData } = useSelector(getAuthUserData);
 
   const onToggleModal = useCallback(() => {
     setIsModalOpened((prev) => !prev);
   }, []);
 
-  if (false) {
+  if (authData) {
     return <NavbarLogout />;
   }
 
