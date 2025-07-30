@@ -1,4 +1,4 @@
-import { FC, useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
@@ -14,8 +14,7 @@ interface LoginFormProps {
     className?: string;
 }
 
-export const LoginForm: FC<LoginFormProps> = (props) => {
-  const { className } = props;
+const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const {
@@ -66,4 +65,6 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
       </Button>
     </div>
   );
-};
+});
+
+export default LoginForm;
